@@ -17,10 +17,10 @@ public class CloudGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Random.Range(1.0f, 200.0f) < 3)
+        if (Random.Range(1.0f, 200.0f) < 2)
         {
             // 生成位置
-            Vector3 pos = new Vector3(10.0f, Random.Range(-5.0f,5.0f), 0.8f);
+            Vector3 pos = new Vector3(10.0f, Random.Range(-3.0f,5.0f), 0.8f);
             int number = Random.Range(0, 2);
 
 
