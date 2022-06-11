@@ -8,6 +8,7 @@ public class CloudGenerator : MonoBehaviour
     public GameObject Prefab1; // プレハブ格納用
     public GameObject Prefab2; // プレハブ格納用
     public GameObject Prefab3;
+    public GameObject Prefab4;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +18,11 @@ public class CloudGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Random.Range(1.0f, 200.0f) < 2)
+        if (Random.Range(1.0f, 300.0f) < 2)
         {
             // 生成位置
-            Vector3 pos = new Vector3(10.0f, Random.Range(-3.0f,5.0f), 0.8f);
-            int number = Random.Range(0, 2);
+            Vector3 pos = new Vector3(10.0f, Random.Range(-5.0f,2.0f), 0.8f);
+            int number = Random.Range(0, 4);
 
 
             switch (number)
@@ -37,6 +38,10 @@ public class CloudGenerator : MonoBehaviour
                 case 2:
                     // プレハブを指定位置に生成
                     Instantiate(Prefab3, pos, Quaternion.identity);
+                    break;
+                case 3:
+                    // プレハブを指定位置に生成
+                    Instantiate(Prefab4, pos, Quaternion.identity);
                     break;
                 default:
                     break;
