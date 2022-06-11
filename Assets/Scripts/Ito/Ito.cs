@@ -8,11 +8,9 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Ito : MonoBehaviour
 {
-    // イベント
-    UnityEvent OnCuttedEvent;
-
     // 外部オブジェクト
-    public Transform Origin;
+    [field: SerializeField] private Transform StartPos;
+    [field: SerializeField] private Transform EndPos;
 
     // 外部パラメーター
     [field: SerializeField]
@@ -40,29 +38,36 @@ public class Ito : MonoBehaviour
         private set;
     }
 
+    public float LengthPercent
+    {
+        get { return CurrentLength / MaxLength; }
+    }
+
     // 内部パラメーター
-    private float _pixelsPerUnit;
     private float _beforeGrowthTime;
+    private Vector3 _initScale;
 
     // 内部コンポーネント
     private SpriteRenderer _spriteRenderer;
-    private Sprite _sprite;
 
-    void Awake()
+    private void Awake()
     {
         TryGetComponent(out _spriteRenderer);
-        _sprite = _spriteRenderer.sprite;
-        _pixelsPerUnit = _sprite.pixelsPerUnit;
     }
 
-    void Start()
+    private void Start()
     {
-        OnCuttedEvent = new UnityEvent();
-
         _beforeGrowthTime = Time.time;
+        _initScale = transform.localScale;
+
+        if (EndPos != null)
+        {
+            MaxLength = Mathf.Abs(EndPos.y - StartPos.y);
+        }
+        SetLength(0.0f);
     }
 
-    void Update()
+    private void Update()
     {
         if (Keyboard.current.anyKey.isPressed)
         {
@@ -73,19 +78,20 @@ public class Ito : MonoBehaviour
             return;
 
         _beforeGrowthTime = Time.time;
+        _initScale = transform.localScale;
         SetLength(CurrentLength + GrowthLength);
     }
 
-    void CutByPositionY(float y)
+    public void CutByPositionY(float y)
     {
-        float length = Origin.position.y - y;
-        //if (length < 0 || MaxLength < length)
-        //    return;
+        float length = StartPos.position.y - y;
+        if (length < 0 || MaxLength < length)
+            return;
 
         SetLength(length);
     }
 
-    void SetLength(float length)
+    public void SetLength(float length)
     {
         if (length == CurrentLength)
             return;
@@ -94,7 +100,7 @@ public class Ito : MonoBehaviour
             length = MaxLength;
 
         CurrentLength = length;
-        transform.position = Origin.position + Vector3.down * (length * 0.5f);
-        transform.localScale = new Vector3(1.0f, length, 1.0f);
+        transform.position = StartPos.position + Vector3.down * (length * 0.5f);
+        transform.localScale = new Vector3(_initScale.x, length, _initScale.z);
     }
 }
