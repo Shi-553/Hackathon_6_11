@@ -27,10 +27,9 @@ public class EnemyManager : MonoBehaviour
         {
             time = Random.Range(createDurationMin, CreateDurationMax);
             int ito = Random.Range(0, itoNum);
-            //TODO:比率まち
-            //
             Ito itoCom = itoArray[ito].GetComponent<Ito>();
-            Vector3 position = itoCom.Origin.position - new Vector3(0, itoCom.MaxLength, 0);
+
+            Vector3 position = itoCom.EndPos;
             GameObject obj = GameObject.Instantiate(Random.Range(0.0f, 1.0f) > goodEnemyProb ? badEnemyRef : goodEnemyRef);
             obj.transform.position = position;
         }

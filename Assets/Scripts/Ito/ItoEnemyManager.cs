@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItoEnemyManager : MonoBehaviour
 {
+    ArrayList enemyList;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,9 @@ public class ItoEnemyManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AddEnemy(GameObject enemy)
+    {
     }
 }
