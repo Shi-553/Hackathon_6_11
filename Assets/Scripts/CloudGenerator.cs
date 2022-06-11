@@ -20,7 +20,7 @@ public class CloudGenerator : MonoBehaviour
         if (Random.Range(1.0f, 100.0f) < 3)
         {
             // 生成位置
-            Vector3 pos = new Vector3(20.0f, Random.Range(-5.0f,5.0f), 0.8f);
+            Vector3 pos = new Vector3(10.0f, Random.Range(-5.0f,5.0f), 0.8f);
             int number = Random.Range(0, 2);
 
 
