@@ -9,8 +9,19 @@ using UnityEngine.UIElements;
 public class Ito : MonoBehaviour
 {
     // 外部オブジェクト
-    [field: SerializeField] private Transform StartPos;
-    [field: SerializeField] private Transform EndPos;
+    [field: SerializeField]
+    public Transform StartPos
+    {
+        get;
+        private set;
+    }
+
+    [field: SerializeField]
+    public Transform EndPos
+    {
+        get;
+        private set;
+    }
 
     // 外部パラメーター
     [field: SerializeField]
@@ -60,9 +71,14 @@ public class Ito : MonoBehaviour
         _beforeGrowthTime = Time.time;
         _initScale = transform.localScale;
 
-        if (EndPos != null)
+        if (EndPos is null)
         {
-            MaxLength = Mathf.Abs(EndPos.y - StartPos.y);
+            EndPos = new GameObject().transform;
+            transform.position = StartPos.position + Vector3.down * MaxLength;
+        }
+        else
+        {
+            MaxLength = Mathf.Abs(EndPos.position.y - StartPos.position.y);
         }
         SetLength(0.0f);
     }
