@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InGame.unity
     guid: 07d8a2ba2c438044c82dcb9843a44b10
+  - enabled: 1
+    path: Assets/Scenes/Kairi.unity
+    guid: d774465e96e47cf46b9fffcb889d1791
   m_configObjects: {}
