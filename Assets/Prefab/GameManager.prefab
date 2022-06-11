@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1428611982560080264}
   - component: {fileID: 1428611982560080265}
   - component: {fileID: 1428611982560080267}
+  - component: {fileID: 652152739}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44543d890dae5d340b84116813e1d643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 20
+  countdown: 60
   timeText: {fileID: 0}
 --- !u!114 &1428611982560080267
 MonoBehaviour:
@@ -60,3 +61,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 0}
+--- !u!114 &652152739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428611982560080270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83be3d6842226b944abcac2b4d8909b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itoArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  goodEnemyRef: {fileID: 963123948140903218, guid: 150d4357f9ae70e4482da66748251961, type: 3}
+  badEnemyRef: {fileID: 3398575275873013270, guid: 678a3e3a243643d47b15431bbe0d8988, type: 3}
+  goodEnemyProb: 0.5
+  createDurationMin: 1
+  CreateDurationMax: 2

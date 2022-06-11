@@ -17,7 +17,7 @@ public class CloudGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Random.Range(1.0f, 100.0f) < 3)
+        if (Random.Range(1.0f, 200.0f) < 3)
         {
             // 生成位置
             Vector3 pos = new Vector3(10.0f, Random.Range(-5.0f,5.0f), 0.8f);
