@@ -1062,14 +1062,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 935177670, guid: 150d4357f9ae70e4482da66748251961, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 935177670, guid: 150d4357f9ae70e4482da66748251961, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 963123948140903218, guid: 150d4357f9ae70e4482da66748251961, type: 3}
       propertyPath: m_Name
       value: GoodEnemy
@@ -1127,14 +1119,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 971616122, guid: 678a3e3a243643d47b15431bbe0d8988, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 971616122, guid: 678a3e3a243643d47b15431bbe0d8988, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3398575275873013270, guid: 678a3e3a243643d47b15431bbe0d8988, type: 3}
       propertyPath: m_Name
       value: BadEnemy
