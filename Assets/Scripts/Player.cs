@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
     Animator animator;
+
+    [SerializeField]
+    AudioClip clip;
     void Start()
     {
         TryGetComponent(out _input);
@@ -71,6 +74,8 @@ public class Player : MonoBehaviour
             hit.transform.TryGetComponent<Ito>(out var ito);
 
             ito.CutByPositionY(hit.point.y);
+
+            AudioSource.PlayClipAtPoint(clip, hit.point);
         }
     }
 }
