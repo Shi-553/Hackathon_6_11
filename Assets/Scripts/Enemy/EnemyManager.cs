@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour
     float time = 0.0f;
     void Start()
     {
-        itoNum = itoArray.Length;
+        itoNum = itoArray.Length - 1;
         time = Random.Range(createDurationMin, CreateDurationMax);
     }
 
@@ -31,7 +31,7 @@ public class EnemyManager : MonoBehaviour
             //
             Ito itoCom = itoArray[ito].GetComponent<Ito>();
             Vector3 position = itoCom.Origin.position - new Vector3(0, itoCom.MaxLength, 0);
-            GameObject obj = GameObject.Instantiate(Random.Range(0, 1) > goodEnemyProb ? badEnemyRef : goodEnemyRef);
+            GameObject obj = GameObject.Instantiate(Random.Range(0.0f, 1.0f) > goodEnemyProb ? badEnemyRef : goodEnemyRef);
             obj.transform.position = position;
         }
     }
