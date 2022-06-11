@@ -1,9 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GoodEnemy : MonoBehaviour
 {
+    public float speed =2.0f;
 
     private bool EnemyState;
 
@@ -16,10 +17,10 @@ public class GoodEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (EnemyState) transform.Translate(0.0f, 1.0f * Time.deltaTime, 0.0f);
+        if (EnemyState) transform.Translate(0.0f, speed * Time.deltaTime, 0.0f);
         else
         {
-            transform.position = new Vector3(0,-2.0f * Time.deltaTime, 0)+ transform.position;
+            transform.position = new Vector3(0, -2 * Time.deltaTime, 0) + transform.position;
         }
     }
 
@@ -31,6 +32,17 @@ public class GoodEnemy : MonoBehaviour
             ScoreManager.Add(1);
             Destroy(gameObject);
         }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Hell") && !EnemyState)
+        {
+            Destroy(gameObject);
+
+        }
+
     }
 
     public void FallDown()

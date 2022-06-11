@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
         {
             hit.transform.TryGetComponent<Ito>(out var ito);
 
-            ito.CutByPositionY(1000);
+            ito.CutByPositionY(hit.point.y);
         }
     }
 }
