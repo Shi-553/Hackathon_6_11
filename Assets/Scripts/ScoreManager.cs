@@ -15,6 +15,7 @@ public static class ScoreManager
     public static void Add(int added)
     {
         score += added;
+        if(score < 0) { score = 0;}
     }
     // スコア取得
     public static int Get()
