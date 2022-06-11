@@ -16,7 +16,10 @@ public class BadEnemy : MonoBehaviour
     void Update()
     {
         if (EnemyState) transform.Translate(0.0f, 1.0f * Time.deltaTime, 0.0f);
-        else transform.Translate(0.0f, -1.0f * Time.deltaTime, 0.0f);
+        else
+        {
+            transform.position = new Vector3(0, -2.0f * Time.deltaTime, 0) + transform.position;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -33,6 +36,7 @@ public class BadEnemy : MonoBehaviour
     {
         EnemyState = false;
         transform.Rotate(0.0f, 0.0f, 30.0f);
+        //transform.Rotate(0.0f, 0.0f, Random.Range(20.0f, 40.0f));
 
     }
 
