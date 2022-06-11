@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -67,15 +67,19 @@ public class Ito : MonoBehaviour
         float yPos = StartPos.y - MaxLength * LengthPercent;
         for (int i = 0; i < enemyList.Count; i++)
         {
-            if (enemyList[i].transform.position.y < yPos)
+            if (enemyList[i]!=null&&enemyList[i].transform.position.y < yPos)
             {
                 if (enemyList[i].GetComponent<BadEnemy>())
                 {
                     enemyList[i].GetComponent<BadEnemy>().FallDown();
+                    enemyList.RemoveAt(i);
+                    i--;
                 }
                 else if (enemyList[i].GetComponent<GoodEnemy>())
                 {
                     enemyList[i].GetComponent<GoodEnemy>().FallDown();
+                    enemyList.RemoveAt(i);
+                    i--;
                 }
             }
         }
