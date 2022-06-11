@@ -66,7 +66,7 @@ public class Ito : MonoBehaviour
     {
         if (Keyboard.current.anyKey.isPressed)
         {
-            CutByPositionY(Origin.position.y - 1.0f);
+            CutByPositionY(0.0f);
         }
 
         if (_beforeGrowthTime + Duration > Time.time)
@@ -79,8 +79,8 @@ public class Ito : MonoBehaviour
     public void CutByPositionY(float y)
     {
         float length = Origin.position.y - y;
-        if (length < 0 || CurrentLength < length || MaxLength < length)
-            return;
+        //if (length < 0 || MaxLength < length)
+        //    return;
 
         SetLength(length);
     }
@@ -94,7 +94,7 @@ public class Ito : MonoBehaviour
             length = MaxLength;
 
         CurrentLength = length;
-        transform.position = Origin.position + Vector3.down * (length / _pixelsPerUnit * 50.0f);
-        transform.localScale = new Vector3(1.0f, length / _pixelsPerUnit * 100.0f, 1.0f);
+        transform.position = Origin.position + Vector3.down * (length * 0.5f);
+        transform.localScale = new Vector3(1.0f, length, 1.0f);
     }
 }
