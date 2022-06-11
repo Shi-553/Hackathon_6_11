@@ -29,6 +29,14 @@ public class BadEnemy : MonoBehaviour
             ScoreManager.Add(-1);
             Destroy(gameObject);
         }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Hell"))
+        {
+            Destroy(gameObject);
+
+        }
 
     }
 
