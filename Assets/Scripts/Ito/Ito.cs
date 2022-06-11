@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -56,10 +56,34 @@ public class Ito : MonoBehaviour
 
     // 内部コンポーネント
     private SpriteRenderer _spriteRenderer;
+    private List<GameObject> enemyList;
+    public void AddEnemy(GameObject enemy)
+    {
+        enemyList.Add(enemy);
+    }
 
+    public void Cut()
+    {
+        float yPos = StartPos.y - MaxLength * LengthPercent;
+        for (int i = 0; i < enemyList.Count; i++)
+        {
+            if (enemyList[i].transform.position.y < yPos)
+            {
+                if (enemyList[i].GetComponent<BadEnemy>())
+                {
+                    enemyList[i].GetComponent<BadEnemy>().FallDown();
+                }
+                else if (enemyList[i].GetComponent<GoodEnemy>())
+                {
+                    enemyList[i].GetComponent<GoodEnemy>().FallDown();
+                }
+            }
+        }
+    }
     private void Awake()
     {
         TryGetComponent(out _spriteRenderer);
+        enemyList = new List<GameObject>();
     }
 
     private void Start()
@@ -74,10 +98,10 @@ public class Ito : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.anyKey.isPressed)
-        {
-            CutByPositionY(0.0f);
-        }
+        //if (Keyboard.current.anyKey.isPressed)
+        //{
+        //    CutByPositionY(0.0f);
+        //}
 
         if (_beforeGrowthTime + Duration > Time.time)
             return;
@@ -91,9 +115,10 @@ public class Ito : MonoBehaviour
     {
         float length = StartPos.y - y;
         if (length < 0 || MaxLength < length)
-            return;
+            length = 0;
 
         SetLength(length);
+        Cut();
     }
 
     public void SetLength(float length)

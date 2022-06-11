@@ -34,6 +34,7 @@ public class EnemyManager : MonoBehaviour
             Vector3 position = itoCom.EndPos - new Vector3(0, 0, 0.1f);
             GameObject obj = GameObject.Instantiate(Random.Range(0.0f, 1.0f) > goodEnemyProb ? badEnemyRef : goodEnemyRef);
             obj.transform.position = position;
+            itoCom.AddEnemy(obj);
         }
     }
 }
