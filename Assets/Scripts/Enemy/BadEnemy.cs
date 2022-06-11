@@ -32,7 +32,7 @@ public class BadEnemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Hell"))
+        if (other.gameObject.CompareTag("Hell")&&!EnemyState)
         {
             Destroy(gameObject);
 
