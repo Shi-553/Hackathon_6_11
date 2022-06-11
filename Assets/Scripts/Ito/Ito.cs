@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -76,7 +76,7 @@ public class Ito : MonoBehaviour
         SetLength(CurrentLength + GrowthLength);
     }
 
-    void CutByPositionY(float y)
+    public void CutByPositionY(float y)
     {
         float length = Origin.position.y - y;
         if (length < 0 || CurrentLength < length || MaxLength < length)

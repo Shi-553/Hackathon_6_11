@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
         Vector3 touchWorldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         if (beforePos == touchWorldPosition)
@@ -39,14 +40,23 @@ public class Player : MonoBehaviour
         spriteRenderer.flipX = beforePos.x > touchWorldPosition.x;
 
 
-        var hits = Physics2D.LinecastAll(beforePos, touchWorldPosition, itoLayer);
-
-        foreach (var hit in hits)
+        if (Mouse.current.leftButton.isPressed)
         {
-            hit.transform.TryGetComponent<GameObject>(out var ito);
-            Debug.Log(hit.point);
+            Linecast(beforePos, touchWorldPosition);
         }
 
         beforePos = touchWorldPosition;
+    }
+
+    void Linecast(Vector3 before, Vector3 after)
+    {
+        var hits = Physics2D.LinecastAll(before, after, itoLayer);
+
+        foreach (var hit in hits)
+        {
+            hit.transform.TryGetComponent<Ito>(out var ito);
+
+            ito.CutByPositionY(hit.point.y);
+        }
     }
 }
