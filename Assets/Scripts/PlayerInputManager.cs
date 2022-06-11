@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerInput))]
 public class PlayerInputManager : MonoBehaviour
 {
     private InputActionData _input;
