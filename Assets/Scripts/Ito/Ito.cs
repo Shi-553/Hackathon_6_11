@@ -8,21 +8,6 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Ito : MonoBehaviour
 {
-    // 外部オブジェクト
-    [field: SerializeField]
-    public Transform StartPos
-    {
-        get;
-        private set;
-    }
-
-    [field: SerializeField]
-    public Transform EndPos
-    {
-        get;
-        private set;
-    }
-
     // 外部パラメーター
     [field: SerializeField]
     public float MaxLength
@@ -44,6 +29,17 @@ public class Ito : MonoBehaviour
     }
     [field: SerializeField]
     public float GrowthLength
+    {
+        get;
+        private set;
+    }
+
+    public Vector3 StartPos
+    {
+        get;
+        private set;
+    }
+    public Vector3 EndPos
     {
         get;
         private set;
@@ -71,15 +67,8 @@ public class Ito : MonoBehaviour
         _beforeGrowthTime = Time.time;
         _initScale = transform.localScale;
 
-        if (EndPos is null)
-        {
-            EndPos = new GameObject().transform;
-            transform.position = StartPos.position + Vector3.down * MaxLength;
-        }
-        else
-        {
-            MaxLength = Mathf.Abs(EndPos.position.y - StartPos.position.y);
-        }
+        StartPos = transform.position;
+        EndPos = transform.position + Vector3.down * MaxLength;
         SetLength(0.0f);
     }
 
@@ -100,7 +89,7 @@ public class Ito : MonoBehaviour
 
     public void CutByPositionY(float y)
     {
-        float length = StartPos.position.y - y;
+        float length = StartPos.y - y;
         if (length < 0 || MaxLength < length)
             return;
 
@@ -116,7 +105,7 @@ public class Ito : MonoBehaviour
             length = MaxLength;
 
         CurrentLength = length;
-        transform.position = StartPos.position + Vector3.down * (length * 0.5f);
+        transform.position = StartPos + Vector3.down * (length * 0.5f);
         transform.localScale = new Vector3(_initScale.x, length, _initScale.z);
     }
 }
