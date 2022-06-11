@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour
     float time = 0.0f;
     void Start()
     {
-        itoNum = itoArray.Length - 1;
+        itoNum = itoArray.Length;
         time = Random.Range(createDurationMin, CreateDurationMax);
     }
 
@@ -26,10 +26,12 @@ public class EnemyManager : MonoBehaviour
         if(time<=0)
         {
             time = Random.Range(createDurationMin, CreateDurationMax);
-            int ito = Random.Range(0, itoNum);
+            int ito = (int)(Random.Range(0.0f, 1.0f) * itoNum);
+            if (ito == itoNum)
+                ito--;
             Ito itoCom = itoArray[ito].GetComponent<Ito>();
 
-            Vector3 position = itoCom.EndPos;
+            Vector3 position = itoCom.EndPos - new Vector3(0, 0, 0.1f);
             GameObject obj = GameObject.Instantiate(Random.Range(0.0f, 1.0f) > goodEnemyProb ? badEnemyRef : goodEnemyRef);
             obj.transform.position = position;
         }
