@@ -11,10 +11,12 @@ public class ScoreText : MonoBehaviour
     void Start()
     {
         text = GetComponent<Text>();
+        ChangeScoreText();
     }
 
-    void Update()
+    void ChangeScoreText()
     {
-        
+        if (!text) return;
+        text.text = ScoreManager.Get().ToString();
     }
 }
