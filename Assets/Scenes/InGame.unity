@@ -696,6 +696,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 652152739, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
+      propertyPath: itoArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 378124257}
+    - target: {fileID: 652152739, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
+      propertyPath: itoArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 1236218642}
+    - target: {fileID: 652152739, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
+      propertyPath: itoArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 1378233087}
+    - target: {fileID: 652152739, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
+      propertyPath: itoArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 292440542}
+    - target: {fileID: 652152739, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
+      propertyPath: itoArray.Array.data[4]
+      value: 
+      objectReference: {fileID: 408478753}
+    - target: {fileID: 652152739, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
+      propertyPath: itoArray.Array.data[5]
+      value: 
+      objectReference: {fileID: 1637831083}
     - target: {fileID: 1428611982560080264, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -744,10 +768,6 @@ PrefabInstance:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 273860266}
-    - target: {fileID: 1428611982560080265, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
-      propertyPath: countdown
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 1428611982560080267, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
       propertyPath: ScoreText
       value: 
@@ -763,7 +783,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1428611982560080270, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
   m_PrefabInstance: {fileID: 652152737}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &652152739
+--- !u!114 &652152740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -772,21 +792,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 652152738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83be3d6842226b944abcac2b4d8909b3, type: 3}
+  m_Script: {fileID: 11500000, guid: dad6f9692ef65b14989fbd17f1a0b2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itoArray:
-  - {fileID: 378124257}
-  - {fileID: 1236218642}
-  - {fileID: 1378233087}
-  - {fileID: 292440542}
-  - {fileID: 408478753}
-  - {fileID: 1637831083}
-  goodEnemyRef: {fileID: 963123948140903218, guid: 150d4357f9ae70e4482da66748251961, type: 3}
-  badEnemyRef: {fileID: 3398575275873013270, guid: 678a3e3a243643d47b15431bbe0d8988, type: 3}
-  goodEnemyProb: 0.5
-  createDurationMin: 1
-  CreateDurationMax: 2
+  Prefab1: {fileID: 7120349355510212925, guid: bccfccdd7035ed34eb830cdc3d66f68d, type: 3}
+  Prefab2: {fileID: 4590201252946254024, guid: 920ac8b0d242d1d46aae31e6fd2d7da5, type: 3}
+  Prefab3: {fileID: 195096934637321847, guid: ef1ce462e76c62e48b9b56f55c52a255, type: 3}
 --- !u!1 &733211412
 GameObject:
   m_ObjectHideFlags: 0
