@@ -36,19 +36,21 @@ public class EnemyManager : MonoBehaviour
             if (ito == itoNum)
                 ito--;
             Ito itoCom = itoArray[ito].GetComponent<Ito>();
-
-            Vector3 position = itoCom.EndPos - new Vector3(0, 0, 0.1f);
-            GameObject obj = GameObject.Instantiate(Random.Range(0.0f, 1.0f) > goodEnemyProb ? badEnemyRef : goodEnemyRef);
-            obj.transform.position = position;
-            if(obj.transform.GetComponent<GoodEnemy>())
+            if (itoCom.CurrentLength == itoCom.MaxLength)
             {
-                obj.transform.GetComponent<GoodEnemy>().speed = enemySpeed + Random.Range(0, enemySpeedRange);
+                Vector3 position = itoCom.EndPos - new Vector3(0, 0, 0.1f);
+                GameObject obj = GameObject.Instantiate(Random.Range(0.0f, 1.0f) > goodEnemyProb ? badEnemyRef : goodEnemyRef);
+                obj.transform.position = position;
+                if (obj.transform.GetComponent<GoodEnemy>())
+                {
+                    obj.transform.GetComponent<GoodEnemy>().speed = enemySpeed + Random.Range(0, enemySpeedRange);
+                }
+                else if (obj.transform.GetComponent<BadEnemy>())
+                {
+                    obj.transform.GetComponent<BadEnemy>().speed = enemySpeed + Random.Range(0, enemySpeedRange * 1.5f);
+                }
+                itoCom.AddEnemy(obj);
             }
-            else if(obj.transform.GetComponent<BadEnemy>())
-            {
-                obj.transform.GetComponent<BadEnemy>().speed = enemySpeed + Random.Range(0, enemySpeedRange * 1.5f);
-            }
-            itoCom.AddEnemy(obj);
         }
         if(gameTime>=6&&!maxDuration)
         {

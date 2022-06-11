@@ -420,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563888, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: <GrowthLength>k__BackingField
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563889, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: m_Name
@@ -567,7 +567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563888, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: <GrowthLength>k__BackingField
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563889, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: m_Name
@@ -645,7 +645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563888, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: <GrowthLength>k__BackingField
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563889, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: m_Name
@@ -828,6 +828,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 652152739, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
+      propertyPath: CreateDurationMax
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 652152739, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
+      propertyPath: createDurationMin
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 652152739, guid: 98df6d96a18839c4d982d85120b6770b, type: 3}
       propertyPath: itoArray.Array.data[0]
       value: 
@@ -1252,7 +1260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563888, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: <GrowthLength>k__BackingField
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563889, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: m_Name
@@ -1330,7 +1338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563888, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: <GrowthLength>k__BackingField
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563889, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: m_Name
@@ -1594,7 +1602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563888, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: <GrowthLength>k__BackingField
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3452030825776563889, guid: e67901ef5f57ebe4abc9878cb26a6bb9, type: 3}
       propertyPath: m_Name
