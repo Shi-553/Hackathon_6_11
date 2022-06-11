@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ public class EnemyManager : MonoBehaviour
     float gameTime = 0.0f;
     static bool maxDuration = false;
     static bool maxSpeed = false;
-    float enemySpeed = 1.0f;
+    float enemySpeed = 2.0f;
     float enemySpeedRange = 0.0f;
     void Start()
     {

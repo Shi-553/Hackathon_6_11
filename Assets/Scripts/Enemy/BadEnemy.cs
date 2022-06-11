@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,7 +36,7 @@ public class BadEnemy : MonoBehaviour
         if (other.gameObject.CompareTag("Hell")&&!EnemyState)
         {
             Destroy(gameObject);
-
+            ScoreManager.Add(1);
         }
 
     }
