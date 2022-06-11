@@ -1,6 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class TitleManager : MonoBehaviour
 {
@@ -11,8 +13,13 @@ public class TitleManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+     void Update()
     {
-        
+     
+    }
+
+       public void StartButtonOnClick()
+    {
+        SceneManager.LoadScene("InGame");
     }
 }
